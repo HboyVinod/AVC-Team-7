@@ -1,0 +1,22 @@
+Tasks:
+ - Turning function to turn left/right 90 degrees, and to do a 180 (maybe 3 sepparate functions).
+ - Function to take a value (-10 to 10) and turn that much, WITHOUT STOPPING (so it might just slow down one wheel and speed up the other).
+ - Fucntion to set the speed (to some default forwards value) and save the value (possibly one for the left wheel and one for the right)
+   in a global variable.
+  
+  
+All:
+ - complete AVC PLAN
+Ben:
+ – 2nd Quadrant directional movement.
+Jess:
+ – Assembling base chassis.
+Himayu:
+ – Setup team Github repository.
+Sarah:
+ – Organising team meeting and checking that all have signed plan, also providing general help.
+Jarrod:
+ – Produce code for straight line movement.
+ 
+ Finished:
+  - 5/05/2017, Ben finished this random example task thingy.
