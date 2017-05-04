@@ -8,7 +8,7 @@ Tasks:
 All:
  - complete AVC PLAN
 Ben:
- – 2nd Quadrant directional movement.
+ – 2nd Quadrant directional movement & setting up the github repo on the Pi.
 Jess:
  – Assembling base chassis.
 Himayu:
