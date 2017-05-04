@@ -5,7 +5,7 @@
 int main() {
 	// parameters
 	// higher than this means the pixel is white, lower means it's black.
-	int threshold = 227;
+	char threshold = 127;
 	
 	
 	
@@ -14,7 +14,7 @@ int main() {
 	display_picture(5,0);
 	int row[320];
 	for(int i = 0; i < 320; i++) {
-		int brightness = get_pixel(120, i, 3);
+		char brightness = get_pixel(120, i, 3);
 		if(brightness <= threshold) {
 			row[i] = 0;
 		} else {
