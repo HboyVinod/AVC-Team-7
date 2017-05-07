@@ -5,7 +5,7 @@
 int main() {
 	// parameters
 	// higher than this means the pixel is white, lower means it's black.
-	char threshold = 127;
+	char threshold = 127	;
 	
 	
 	
@@ -22,6 +22,7 @@ int main() {
 		}
 	}
 	
+	/*
 	int numLeft = 0;
 	int numRight = 0;
 	bool left = true;
@@ -33,7 +34,7 @@ int main() {
 				numRight++;
 			}
 		}
-	}
+	}*/
 	
 	// Work out how much to turn!
 	
