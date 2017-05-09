@@ -4,12 +4,15 @@
 
 }
 int main() {
+ /* turn motors 1 and 2 on */   
     init();    
-    turn_left();
     set_motor(1, 200);    
-    sleep1(0, 5000);
     set_motor(2, 200);    
     sleep1(0, 5000);
+/* Turn motors 1 and 2 off */
+    stop(1);
+    stop(2);
+    
 return 0;}
 
 }
