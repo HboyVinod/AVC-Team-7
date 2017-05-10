@@ -20,3 +20,4 @@ Jarrod:
  
  Finished:
   - 5/05/2017, Ben finished this random example task thingy.
+  - 11/05/2017, Jarrod finished straight line movement.
