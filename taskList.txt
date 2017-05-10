@@ -17,6 +17,7 @@ Jarrod:
  
  Finished:
   - 5/05/2017, Ben finished this random example task thingy.
+  - 5/05/2017, Himayu created github team repository.
   - 11/05/2017, Jarrod finished straight line movement.
   - 11/05/2017, Sarah finished turnOnSpot function (takes parameter of "left", "right" or "back").
-  - 11/05/2017, Himayu modified the takeAPic code.
+  - 11/05/2017, Himayu modified the takeAPic code, added everyone to the github repository.
