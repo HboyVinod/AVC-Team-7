@@ -19,3 +19,4 @@ Jarrod:
   - 5/05/2017, Ben finished this random example task thingy.
   - 11/05/2017, Jarrod finished straight line movement.
   - 11/05/2017, Sarah finished turnOnSpot function (takes parameter of "left", "right" or "back").
+  - 11/05/2017, Himayu modified the takeAPic code.
