@@ -2,7 +2,6 @@
 #include <time.h>
 #include "E101.h"
 
-}
 int main() {
  /* turn motors 1 and 2 on */   
     init();    
