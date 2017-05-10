@@ -5,16 +5,16 @@
 int main() {
 	// parameters
 	// higher than this means the pixel is white, lower means it's black.
-	char threshold = 127;
+	char threshold = 50;
 	// number of test points across the picture which we measure the brightness of.
-	int testPoints = 320;
+	int testPoints = 160;
 	
 	
 	init();
 	take_picture();
 	int row[testPoints];
 	for(int i = 0; i < testPoints; i++) {
-		char brightness = get_pixel(120, i, 3);
+		char brightness = get_pixel(120, (int)((320/testPoints) * i), 3);
 		if(brightness <= threshold) {
 			// black
 			row[i] = 0;
@@ -22,11 +22,13 @@ int main() {
 			// white
 			row[i] = 1;
 		}
+		printf("%d", row[i]);
 	}
 	int total = 0;
 	for(int i = 0; i < testPoints; i++) {
 		total = total + row[i] * (i-(testPoints/2));
 	}
+	printf("\n %d", total);
 	// If negative, turn right.
 	
 	/*
