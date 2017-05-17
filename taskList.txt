@@ -1,5 +1,6 @@
 ﻿Tasks:
- - Function to take a value (-10 to 10) and turn that much, WITHOUT STOPPING (so it might just slow down one wheel and speed up the other).
+ - Quadrant one networking code.
+ - Get SSH working wit the rPi.
   
 All:
  - complete AVC PLAN
@@ -21,3 +22,8 @@ Jarrod:
   - 11/05/2017, Jarrod finished straight line movement.
   - 11/05/2017, Sarah finished turnOnSpot function (takes parameter of "left", "right" or "back").
   - 11/05/2017, Himayu modified the takeAPic code, added everyone to the github repository.
+ 
+
+ Cancelled:
+ - Function to take a value (-10 to 10) and turn that much, WITHOUT STOPPING (so it might just slow down one wheel and speed up the other).
+	- Pretty sure this is completely the wrong type of thing.
