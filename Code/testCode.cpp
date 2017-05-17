@@ -78,3 +78,15 @@ int updateSpeeds() {
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
 	set_motor(2, -1 * rightWheel);
 	return 0;}
+	
+	
+	
+int openSesame(){
+	init(1);
+	char message[24];
+	connect_to_server("130.195.6.196", 1024);
+	send_to_server("Please");//does ths have to be a char array?
+	receive_from_server(message);
+	send_to_server(message);
+	
+return 0;}
