@@ -81,7 +81,7 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 	int error = 0;
 	int total = 0;
 	for(int i = 0; i < testPoints; i++) {
-		printf("%d ", row[i]);
+		//printf("%d ", row[i]);
 		error = error + row[i] * (i-(testPoints/2));
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
@@ -117,7 +117,7 @@ int q2() {
 	
 	int error = q2GetError(threshold, testPoints, scaleValue);
 	int dSpeed = getDSpeed(error, scaleValue);
-	printf("%d,%d",error,dSpeed);
+	printf("%d",error);
 	turn(dSpeed);
 	sleep1(0, 500);
 	return 0;
