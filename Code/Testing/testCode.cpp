@@ -31,14 +31,14 @@ int updateSpeeds() {
 	} else if(leftWheel < -254) {
 		leftWheel = -254;
 	}
-	printf("%d \n", leftWheel);
+	printf("w1: %d \n", leftWheel);
 	
 	if(rightWheel > 254) {
 		rightWheel = 254;
 	} else if(rightWheel < -254) {
 		rightWheel = -254;
 	}
-	printf("%d \n", rightWheel);
+	printf("w2: %d \n", rightWheel);
 	
 	set_motor(1, leftWheel);
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
@@ -49,7 +49,7 @@ int updateSpeeds() {
 int turn(int dSpeed) {
 	leftWheel = leftWheel + dSpeed;
 	rightWheel = rightWheel - dSpeed;
-	printf("%d \n", dSpeed);
+	printf("dSpeed: %d \n", dSpeed);
 	updateSpeeds();
 	return 0;
 }
@@ -86,6 +86,7 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 		error = error + row[i] * (i-(testPoints/2));
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
+	printf("Error: %d, Total: %d", error, total);
 	return error;
 }
 
