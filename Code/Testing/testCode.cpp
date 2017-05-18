@@ -31,12 +31,14 @@ int updateSpeeds() {
 	} else if(leftWheel < -254) {
 		leftWheel = -254;
 	}
+	printf("%d \n", leftWheel);
 	
 	if(rightWheel > 254) {
 		rightWheel = 254;
 	} else if(rightWheel < -254) {
 		rightWheel = -254;
 	}
+	printf("%d \n", rightWheel);
 	
 	set_motor(1, leftWheel);
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
