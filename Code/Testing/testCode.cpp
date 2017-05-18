@@ -109,7 +109,7 @@ int getDSpeed(int error, double scaleValue) {
 int q2() {
 	// parameters
 	// higher than this means the pixel is white, lower means it's black.
-	char threshold = 100;
+	char threshold = 60;
 	// number of test points across the picture which we measure the brightness of.
 	int testPoints = 320;
 	// the magic value to scale the error signal by to get the speed change.
