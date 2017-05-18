@@ -5,7 +5,7 @@
 // Global Variables
 
 // The magic value! (change this)
-double magicValue = 0.03;
+double magicValue = 0.005;
 // the default speeds of the wheels
 static int defaultSpeed = 40;
 
@@ -86,6 +86,12 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
 	printf("\n %d", (int)(error*scaleValue));
+	if(error < -8000) {
+		error = -8000;
+	}
+	if(error > 8000) {
+		error = 8000;
+	}
 	return error;
 }
 
