@@ -85,7 +85,7 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 		error = error + row[i] * (i-(testPoints/2));
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
-	printf("\n");
+	printf("\n %d", (int)(error*scaleValue));
 	return error;
 }
 
