@@ -49,6 +49,7 @@ int updateSpeeds() {
 int turn(int dSpeed) {
 	leftWheel = leftWheel + dSpeed;
 	rightWheel = rightWheel - dSpeed;
+	printf("%d \n", dSpeed);
 	updateSpeeds();
 	return 0;
 }
