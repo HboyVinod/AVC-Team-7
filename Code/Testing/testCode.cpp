@@ -35,9 +35,9 @@ int updateSpeeds() {
 		rightWheel = -254;
 	}
 	
-	set_motor(1,leftWheel);
+	set_motor(1, leftWheel);
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
-	set_motor(2, -1 * rightWheel);
+	set_motor(2, rightWheel);
 	return 0;
 }
 	
@@ -52,7 +52,6 @@ int openSesame(){
 }
 
 int q2GetError(char threshold, int testPoints, double scaleValue) {
-	
 	
 	take_picture();
 	int row[testPoints];
