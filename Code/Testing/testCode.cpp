@@ -26,16 +26,16 @@ int abs(int num) {
 int updateSpeeds() {
 
 	// Maybe check that right wheel isn't like 20 and left wheel isn't like 260 (otherwise it will just break).
-	if(leftWheel > 254) {
-		leftWheel = 254;
-	} else if(leftWheel < -254) {
-		leftWheel = -254;
+	if(leftWheel > 150) {
+		leftWheel = 150;
+	} else if(leftWheel < -150) {
+		leftWheel = -150;
 	}
 	
-	if(rightWheel > 254) {
-		rightWheel = 254;
-	} else if(rightWheel < -254) {
-		rightWheel = -254;
+	if(rightWheel > 150) {
+		rightWheel = 150;
+	} else if(rightWheel < -150) {
+		rightWheel = -150;
 	}
 	
 	set_motor(1, leftWheel);
@@ -66,7 +66,7 @@ int openSesame(){
 int q2GetError(char threshold, int testPoints, double scaleValue) {
 	
 	take_picture();
-	display_picture(3,0);
+	//display_picture(3,0);
 	int row[testPoints];
 	for(int i = 0; i < testPoints; i++) {
 		char brightness = get_pixel(120, (int)((320/testPoints) * i), 3);
