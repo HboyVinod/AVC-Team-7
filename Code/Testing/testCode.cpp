@@ -5,7 +5,7 @@
 // Global Variables
 
 // The magic value! (change this)
-double magicValue = 0.001;
+double magicValue = 0.0001;
 // the default speeds of the wheels
 static int defaultSpeed = 40;
 
@@ -98,13 +98,18 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 int getDSpeed(int error, double scaleValue) {
 	// Value to change the wheel speeds by.
 	int dSpeed = (int)(error * scaleValue);
+	/*
+	if() {
+		
+	}
+	* */
 	return dSpeed;
 }
 
 int q2() {
 	// parameters
 	// higher than this means the pixel is white, lower means it's black.
-	char threshold = 125;
+	char threshold = 100;
 	// number of test points across the picture which we measure the brightness of.
 	int testPoints = 320;
 	// the magic value to scale the error signal by to get the speed change.
@@ -114,7 +119,7 @@ int q2() {
 	int dSpeed = getDSpeed(error, scaleValue);
 	printf("%d,%d",error,dSpeed);
 	turn(dSpeed);
-	sleep1(0, 5000);
+	sleep1(1, 0);
 	return 0;
 }
 
