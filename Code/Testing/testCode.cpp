@@ -5,7 +5,7 @@
 // Global Variables
 
 // The magic value! (change this)
-double magicValue = 0.0003;
+double magicValue = 0.0002;
 // the default speeds of the wheels
 static int defaultSpeed = 40;
 
@@ -119,7 +119,7 @@ int q2() {
 	int dSpeed = getDSpeed(error, scaleValue);
 	printf("%d,%d",error,dSpeed);
 	turn(dSpeed);
-	sleep1(0, 500);
+	sleep1(0, 5000);
 	return 0;
 }
 
