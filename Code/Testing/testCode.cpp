@@ -31,14 +31,12 @@ int updateSpeeds() {
 	} else if(leftWheel < -254) {
 		leftWheel = -254;
 	}
-	printf("w1: %d \n", leftWheel);
 	
 	if(rightWheel > 254) {
 		rightWheel = 254;
 	} else if(rightWheel < -254) {
 		rightWheel = -254;
 	}
-	printf("w2: %d \n", rightWheel);
 	
 	set_motor(1, leftWheel);
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
@@ -49,7 +47,6 @@ int updateSpeeds() {
 int turn(int dSpeed) {
 	leftWheel = leftWheel + dSpeed;
 	rightWheel = rightWheel - dSpeed;
-	printf("dSpeed: %d \n", dSpeed);
 	updateSpeeds();
 	return 0;
 }
@@ -69,6 +66,7 @@ int openSesame(){
 int q2GetError(char threshold, int testPoints, double scaleValue) {
 	
 	take_picture();
+	display_picture(3,0);
 	int row[testPoints];
 	for(int i = 0; i < testPoints; i++) {
 		char brightness = get_pixel(120, (int)((320/testPoints) * i), 3);
@@ -83,10 +81,11 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 	int error = 0;
 	int total = 0;
 	for(int i = 0; i < testPoints; i++) {
+		printf("%d ", row[i]);
 		error = error + row[i] * (i-(testPoints/2));
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
-	printf("Error: %d, Total: %d", error, total);
+	printf("\n");
 	return error;
 }
 
@@ -107,6 +106,7 @@ int q2() {
 	
 	int error = q2GetError(threshold, testPoints, scaleValue);
 	int dSpeed = getDSpeed(error, scaleValue);
+	printf("%d,%d",error,dSpeed);
 	turn(dSpeed);
 	sleep1(0, 500);
 	return 0;
