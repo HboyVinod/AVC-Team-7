@@ -13,11 +13,14 @@ static int defaultSpeed = 80;
 int leftWheel = defaultSpeed;
 int rightWheel = defaultSpeed;
 
-int turn(dSpeed) {
-	leftWheel = leftWheel + dSpeed;
-	rightWheel = rightWheel - dSpeed;
-	updateSpeeds();
-	return 0;
+int abs(int num) {
+	int ans = 0;
+	if(num < 0) {
+		ans = -1 * num;
+	} else {
+		ans = num;
+	}
+	return ans;
 }
 	
 int updateSpeeds() {
@@ -40,7 +43,15 @@ int updateSpeeds() {
 	set_motor(2, rightWheel);
 	return 0;
 }
-	
+
+int turn(int dSpeed) {
+	leftWheel = leftWheel + dSpeed;
+	rightWheel = rightWheel - dSpeed;
+	updateSpeeds();
+	return 0;
+}
+
+/*
 int openSesame(){
 	init(1);
 	char message[24];
@@ -50,6 +61,7 @@ int openSesame(){
 	send_to_server(message);
 	return 0;
 }
+*/
 
 int q2GetError(char threshold, int testPoints, double scaleValue) {
 	
@@ -69,7 +81,7 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 	int total = 0;
 	for(int i = 0; i < testPoints; i++) {
 		error = error + row[i] * (i-(testPoints/2));
-		total = total + row[i] * abs(i-(testPoints/2))
+		total = total + row[i] * abs(i-(testPoints/2));
 	}
 	return error;
 }
@@ -90,7 +102,7 @@ int q2() {
 	// the magic value to scale the error signal by to get the speed change.
 	double scaleValue = magicValue;
 	
-	int error = q2GetError(char threshold, int testPoints, double scaleValue);
+	int error = q2GetError(threshold, testPoints, scaleValue);
 	int dSpeed = getDSpeed(error, scaleValue);
 	turn(dSpeed);
 	sleep1(0, 500);
