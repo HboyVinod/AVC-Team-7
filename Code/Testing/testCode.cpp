@@ -5,7 +5,7 @@
 // Global Variables
 
 // The magic value! (change this)
-double magicValue = 0.0002;
+double magicValue = 0.00015;
 // the default speeds of the wheels
 static int defaultSpeed = 40;
 
