@@ -1,11 +1,11 @@
 ﻿Tasks:
- - Quadrant one networking code.
- - Get SSH working wit the rPi.
+ - Testing for q2 code (fine tune scale value)
+ - Test q1 code.
   
 All:
  - complete AVC PLAN
 Ben:
- – 2nd Quadrant directional movement & setting up the github repo on the Pi.
+ – 2nd Quadrant directional movement.
 Jess:
  – Assembling base chassis.
 Himayu:
@@ -19,9 +19,12 @@ Jarrod:
  Finished:
   - 5/05/2017, Ben finished this random example task thingy.
   - 5/05/2017, Himayu created github team repository.
+  - 11/05/2017, Ben cloned the github repo to the pi.
   - 11/05/2017, Jarrod finished straight line movement.
   - 11/05/2017, Sarah finished turnOnSpot function (takes parameter of "left", "right" or "back").
   - 11/05/2017, Himayu modified the takeAPic code, added everyone to the github repository.
+  - 18/05/2017, Himayu worked out how to SSH into the pi.
+  - 18/05/2017, Sarah added the q1 code for opening the gate.
  
 
  Cancelled:
