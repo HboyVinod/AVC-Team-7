@@ -45,8 +45,8 @@ int updateSpeeds() {
 }
 
 int turn(int dSpeed) {
-	leftWheel = leftWheel - dSpeed;
-	rightWheel = rightWheel + dSpeed;
+	leftWheel = leftWheel + dSpeed;
+	rightWheel = rightWheel - dSpeed;
 	updateSpeeds();
 	return 0;
 }
