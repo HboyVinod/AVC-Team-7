@@ -91,9 +91,8 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 }
 
 int getDSpeed(int error, int scaleValue) {
-	// If negative, turn left.
 	// Value to change the wheel speeds by.
-	int dSpeed = (int)(error * scaleValue);
+	int dSpeed = /*(int)*/(error * scaleValue);
 	return dSpeed;
 }
 
