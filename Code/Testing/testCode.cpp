@@ -85,7 +85,7 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 		error = error + row[i] * (i-(testPoints/2));
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
-	printf("\n %d", (int)(error*scaleValue));
+	printf("\n %d,", (int)(error*scaleValue));
 	if(error < -8000) {
 		error = -8000;
 	}
@@ -97,7 +97,7 @@ int q2GetError(char threshold, int testPoints, double scaleValue) {
 
 int getDSpeed(int error, double scaleValue) {
 	// Value to change the wheel speeds by.
-	int dSpeed = /*(int)*/(error * scaleValue);
+	int dSpeed = (int)(error * scaleValue);
 	return dSpeed;
 }
 
