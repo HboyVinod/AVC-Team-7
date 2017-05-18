@@ -24,7 +24,7 @@ int abs(int num) {
 }
 	
 int updateSpeeds() {
-
+	/*
 	// Maybe check that right wheel isn't like 20 and left wheel isn't like 260 (otherwise it will just break).
 	if(leftWheel > 150) {
 		leftWheel = 150;
@@ -37,7 +37,7 @@ int updateSpeeds() {
 	} else if(rightWheel < -150) {
 		rightWheel = -150;
 	}
-	
+	*/
 	set_motor(1, leftWheel);
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
 	set_motor(2, rightWheel);
