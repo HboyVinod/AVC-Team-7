@@ -117,7 +117,7 @@ int q2() {
 	
 	int error = q2GetError(threshold, testPoints, scaleValue);
 	int dSpeed = getDSpeed(error, scaleValue);
-	printf("%d",error);
+	printf("%d, %d",error,dSpeed);
 	turn(dSpeed);
 	sleep1(0, 500);
 	return 0;
