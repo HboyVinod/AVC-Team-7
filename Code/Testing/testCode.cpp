@@ -119,7 +119,7 @@ int q2() {
 	int dSpeed = getDSpeed(error, scaleValue);
 	printf("%d,%d",error,dSpeed);
 	turn(dSpeed);
-	sleep1(1, 0);
+	sleep1(0, 500);
 	return 0;
 }
 
