@@ -33,7 +33,6 @@ int q2() {
 	int error = 0;
 	int total = 0;
 	for(int i = 0; i < testPoints; i++) {
-		//printf("%d ", row[i]);
 		error = error + row[i] * (i-(testPoints/2));
 		total = total + row[i] * abs(i-(testPoints/2));
 	}
