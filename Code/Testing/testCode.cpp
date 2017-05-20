@@ -22,22 +22,21 @@ int abs(int num) {
 	}
 	return ans;
 }
-	
+
 int updateSpeeds() {
-	
 	// Maybe check that right wheel isn't like 20 and left wheel isn't like 260 (otherwise it will just break).
 	if(leftWheel > 150) {
 		leftWheel = 150;
 	} else if(leftWheel < -150) {
 		leftWheel = -150;
 	}
-	
+
 	if(rightWheel > 150) {
 		rightWheel = 150;
 	} else if(rightWheel < -150) {
 		rightWheel = -150;
 	}
-	
+
 	set_motor(1, leftWheel);
 	// -1 * rightWheel may need changing depending on how the motors are wired up.
 	set_motor(2, rightWheel);
@@ -64,7 +63,7 @@ int openSesame(){
 */
 
 int q2GetError(char threshold, int testPoints, double scaleValue) {
-	
+
 	take_picture();
 	//display_picture(3,0);
 	int row[testPoints];
@@ -102,7 +101,7 @@ int getDSpeed(int error, double scaleValue) {
 	int dSpeed = (int)(error * scaleValue);
 	/*
 	if() {
-		
+
 	}
 	* */
 	return dSpeed;
@@ -116,7 +115,7 @@ int q2() {
 	int testPoints = 320;
 	// the magic value to scale the error signal by to get the speed change.
 	double scaleValue = magicValue;
-	
+
 	int error = q2GetError(threshold, testPoints, scaleValue);
 	int dSpeed = getDSpeed(error, scaleValue);
 	printf("%d, %d",error,dSpeed);
