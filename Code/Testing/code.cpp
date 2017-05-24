@@ -208,6 +208,10 @@ bool finishedQ(int currentQ) {
 int main() {
 
 	while(true) {
+		if(quadrant == 2) {
+			q2();
+		}
+		/*
 		switch(quadrant) {
 			case 1:
 				if(finishedQ(1)) {
@@ -252,6 +256,7 @@ int main() {
 				return 0;
 				//break;
 		}
+		*/
 	}
 	return 0;
 }
