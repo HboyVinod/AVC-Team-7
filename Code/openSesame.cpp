@@ -9,12 +9,14 @@ extern "C" int send_to_server(char message[24]);
 extern "C" int receive_from_server(char message[24]);
 
 
-int main(){
-	init(1);
+int openSesame(){
+	init(1);//not sure about this lineeee
 	char message[24];
-	connect_to_server("130.195.6.196", 1024);
-	send_to_server("Please");//does ths have to be a char array?
-	receive_from_server(message);
+	char[] server_address = "130.195.6.196";
+	char[] pls = "Please";
+	connect_to_server(server_address, 1024);
+	send_to_server(pls);
+	receive_from_server(message);//could be buggy, test it
 	send_to_server(message);
 	
 return 0;}

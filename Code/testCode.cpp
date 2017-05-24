@@ -82,10 +82,12 @@ int updateSpeeds() {
 	
 	
 int openSesame(){
-	init(1);
+	init(1);//not sure about this lineeee
 	char message[24];
-	connect_to_server("130.195.6.196", 1024);
-	send_to_server("Please");//does ths have to be a char array?
+	char[] server_address = "130.195.6.196";
+	char[] pls = "Please";
+	connect_to_server(server_address, 1024);
+	send_to_server(pls);
 	receive_from_server(message);
 	send_to_server(message);
 	
