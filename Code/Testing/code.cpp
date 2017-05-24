@@ -5,7 +5,7 @@
 // Global Variables
 
 // Whether or not you're testing the code (changes whether or not the print statements are used.)
-const int testing = false;
+const int testing = true;
 
 // The current quadrant.
 int quadrant = 1;
