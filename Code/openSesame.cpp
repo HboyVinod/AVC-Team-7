@@ -19,6 +19,9 @@ int main(){
 	receive_from_server(message);//could be buggy, test it
 	send_to_server(message);
 	
+	sleep1(1,0);
+	
+	
 return 0;}
 
 
