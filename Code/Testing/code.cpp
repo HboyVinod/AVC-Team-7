@@ -8,7 +8,7 @@
 const int testing = true;
 
 // The current quadrant.
-int quadrant = 1;
+int quadrant = 2;
 
 // The default speed of the wheels.
 const int defaultSpeed = 40;
@@ -211,6 +211,7 @@ int main() {
 		if(quadrant == 2) {
 			q2();
 		}
+		sleep1(0,500);
 		/*
 		switch(quadrant) {
 			case 1:
