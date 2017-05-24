@@ -183,7 +183,7 @@ int q2() {
 		printf(" - %d,%d\n", error, total);
 	}
 
-	if(goBackward) {
+	if(goBackward()) {
 		backwards();
 	} else {
 		turn(error);
