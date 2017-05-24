@@ -3,7 +3,7 @@
 #include "E101.h"
 
 
-/ The current quadrant.
+// The current quadrant.
 int quadrant = 3;
 
 
