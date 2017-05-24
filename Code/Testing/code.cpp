@@ -19,7 +19,7 @@ int leftWheel = defaultSpeed;
 int rightWheel = defaultSpeed;
 
 // The width of the tape
-int tapeWidth = getTapeWidth();
+int tapeWidth;
 // Q2 Constants
 const double pConstant = 0.003;
 const int testPoints = 320;
@@ -133,8 +133,8 @@ int turn(int error) {
  */
 int getTapeWidth() {
 	tapeWidth = 0;
-	for(int i = 0; i < testPoints; i++){
-		if(row[i] == 1;){
+	for(int i = 0; i < testPoints; i++) {
+		if(row[i] == 1) {
 			tapeWidth++;
 		}
 
@@ -149,12 +149,12 @@ int getTapeWidth() {
 bool goBackward() {
 	int count = 0;
 	for(int i = 0; i < testPoints; i++){
-		if(row[i] == 1;){
+		if(row[i] == 1) {
 			count++;
 		}
-	}if(count < tapeWidth){
+	} if(count < tapeWidth) {
 		return true;
-	}else{
+	} else {
 		return false;
 	}
 }
@@ -165,7 +165,7 @@ bool goBackward() {
  * turns based on this error signal.
  */
 int q2() {
-
+	tapeWidth = getTapeWidth();
 	getRow();
 
 	int error = 0;
