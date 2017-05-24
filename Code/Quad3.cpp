@@ -21,7 +21,6 @@ int rightWheel = defaultSpeed;
 int tapeWidth = getTapeWidth();
 
 
-
 /*
  * Stop the robot (set motor speeds to zero)
  */
@@ -66,7 +65,6 @@ int getTapeWidth() {
 	return tapeWidth;
 }
 
-
 /*
  * Backwards function compares the number of white pixels with the tapeWidth and if it is less than that number it will change course
  * and go backwards. Returns TRUE if it should go backwards and returns FALSE if it should continue going forward.
@@ -82,4 +80,8 @@ bool goBackward() {
 	}else{
 		return false;
 	}
+}
+
+	}
+	return 0;
 }
