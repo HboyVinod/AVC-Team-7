@@ -9,7 +9,7 @@
 //extern "C" int receive_from_server(char message[24]);
 
 
-int openSesame(){
+int main(){
 	init();//not sure about this lineeee
 	char message[24];
 	char server_address[] = "130.195.6.196";
