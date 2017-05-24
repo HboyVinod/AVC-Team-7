@@ -165,7 +165,7 @@ bool goBackward() {
  * turns based on this error signal.
  */
 int q2() {
-	tapeWidth = getTapeWidth();
+
 	getRow();
 
 	int error = 0;
@@ -207,6 +207,7 @@ bool finishedQ(int currentQ) {
  */
 int main() {
 	init();
+	tapeWidth = getTapeWidth();
 	while(true) {
 		if(quadrant == 2) {
 			q2();
