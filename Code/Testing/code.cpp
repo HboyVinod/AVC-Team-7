@@ -19,7 +19,7 @@ int leftWheel = defaultSpeed;
 int rightWheel = defaultSpeed;
 
 // The width of the tape
-int tapeWidth;
+int tapeWidth = 60;
 // Q2 Constants
 const double pConstant = 0.003;
 const int testPoints = 320;
@@ -207,7 +207,7 @@ bool finishedQ(int currentQ) {
  */
 int main() {
 	init();
-	tapeWidth = getTapeWidth();
+	//tapeWidth = getTapeWidth();
 	while(true) {
 		if(quadrant == 2) {
 			q2();
