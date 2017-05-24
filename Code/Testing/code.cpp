@@ -152,7 +152,7 @@ bool goBackward() {
 		if(row[i] == 1) {
 			count++;
 		}
-	} if(count < tapeWidth) {
+	} if(count < (0.5*tapeWidth)) {
 		return true;
 	} else {
 		return false;
