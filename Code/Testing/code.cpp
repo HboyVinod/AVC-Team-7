@@ -216,7 +216,7 @@ int main() {
 				} else {
 					// do Q1 stuff
 				}
-				break;
+				//break;
 
 			case 2:
 				if(finishedQ(2)) {
@@ -225,7 +225,7 @@ int main() {
 				} else {
 					q2();
 				}
-				break;
+				//break;
 
 			case 3:
 				if(finishedQ(3)) {
@@ -234,7 +234,7 @@ int main() {
 				} else {
 					// do Q3 stuff
 				}
-				break;
+				//break;
 
 			case 4:
 				if(finishedQ(4)) {
@@ -244,13 +244,13 @@ int main() {
 				} else {
 					// do Q4 stuff
 				}
-				break;
+				//break;
 
 			default: // If it has no idea which quadrant it's in, break!
 				printf("OhGodHelpPlz\n");
 				stop(1);
 				return 0;
-				break;
+				//break;
 		}
 	}
 	return 0;
