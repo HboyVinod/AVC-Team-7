@@ -108,7 +108,7 @@ int forward() {
  * Set the speeds so the motor is going backwards.
  */
 int backwards() {
-	rightWheel = defaultSpeed;
+	rightWheel = -1 * defaultSpeed;
 	leftWheel = -1 * defaultSpeed;
 	updateSpeeds();
 	return 0;
