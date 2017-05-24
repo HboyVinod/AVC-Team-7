@@ -18,6 +18,8 @@ const int maxSpeed = 150;
 int leftWheel = defaultSpeed;
 int rightWheel = defaultSpeed;
 
+// The width of the tape
+int tapeWidth = getTapeWidth();
 // Q2 Constants
 const double pConstant = 0.003;
 const int testPoints = 320;
@@ -127,6 +129,37 @@ int turn(int error) {
 }
 
 /*
+ * TapeWidth function calculates the number of white pixels the tape is across and returns this value.
+ */
+int getTapeWidth() {
+	tapeWidth = 0;
+	for(int i = 0; i < testPoints; i++){
+		if(row[i] == 1;){
+			tapeWidth++;
+		}
+
+	}
+	return tapeWidth;
+}
+
+/*
+ * Backwards function compares the number of white pixels with the tapeWidth and if it is less than that number it will change course
+ * and go backwards. Returns TRUE if it should go backwards and returns FALSE if it should continue going forward.
+ */
+bool goBackward() {
+	int count = 0;
+	for(int i = 0; i < testPoints; i++){
+		if(row[i] == 1;){
+			count++;
+		}
+	}if(count < tapeWidth){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+/*
  * The code for quadrant 2,
  * Creates an error signal based on how far left or right the line is (0 means the line is central),
  * turns based on this error signal.
@@ -150,7 +183,11 @@ int q2() {
 		printf(" - %d,%d\n", error, total);
 	}
 
-	turn(error);
+	if(goBackward) {
+		backwards();
+	} else {
+		turn(error);
+	}
 
 	return 0;
 }

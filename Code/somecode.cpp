@@ -3,16 +3,15 @@
 #include "E101.h"
 /*
  * TapeWidth function calculates the number of white pixels the tape is across and returns this value.
- * 
  */
 int tapeWidth(int row[], testPoints){
-	
+
 	int tapeWidth = 0;
 	for(int i = 0; i < testPoints; i++){
 		if(row[i] == 1;){
 			tapeWidth ++;
 		}
-		
+
 	}
 	return tapeWidth;
 }
@@ -22,7 +21,7 @@ int tapeWidth(int row[], testPoints){
  * and go backwards. Returns TRUE if it should go backwards and returns FALSE if it should continue going forward.
  */
 bool backward(int row[], testPoints, tapeWidth){
-	int count = 0;	
+	int count = 0;
 	for(int i = 0; i < testPoints; i++){
 		if(row[i] == 1;){
 			count ++;
@@ -38,7 +37,7 @@ bool backward(int row[], testPoints, tapeWidth){
  * tJunction function will check if the number of white pixels is above a value of white pixels to determine if its there or not.
  */
 bool tJunction(int row[], testPoints){
-	int count = 0;	
+	int count = 0;
 	for(int i = 0; i < testPoints; i++){
 		if(row[i] == 1;){
 			count ++;
@@ -48,5 +47,5 @@ bool tJunction(int row[], testPoints){
 	}else{
 		return false;
 	}
-	
+
 }
