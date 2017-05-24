@@ -206,7 +206,7 @@ bool finishedQ(int currentQ) {
  * Runs the functions instrumental to each quadrant, and keeps the user(?) up to date on where the robot is.
  */
 int main() {
-
+	init();
 	while(true) {
 		if(quadrant == 2) {
 			q2();
