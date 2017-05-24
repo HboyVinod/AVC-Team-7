@@ -11,7 +11,7 @@
 
 int openSesame(){
 	init();//not sure about this lineeee
-	char message[];
+	char message[24];
 	char server_address[] = "130.195.6.196";
 	char pls[] = "Please";
 	connect_to_server(server_address, 1024);
