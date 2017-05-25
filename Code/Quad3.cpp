@@ -2,6 +2,9 @@
 #include <time.h>
 #include "E101.h"
 
+const int testPointsCol = 240;
+int col[testPointsCol];
+const int turnThreshold = 60;
 
 // The current quadrant.
 int quadrant = 3;
@@ -18,8 +21,7 @@ int rightWheel = defaultSpeed;
 
 
 // The width of the tape
-int tapeWidth = getTapeWidth();
-
+int tapeWidth = 60;
 
 /*
  * Stop the robot (set motor speeds to zero)
@@ -51,19 +53,6 @@ int backwards() {
 	return 0;
 }
 
-/*
- * TapeWidth function calculates the number of white pixels the tape is across and returns this value.
- */
-int getTapeWidth() {
-	tapeWidth = 0;
-	for(int i = 0; i < testPoints; i++){
-		if(row[i] == 1;){
-			tapeWidth++;
-		}
-
-	}
-	return tapeWidth;
-}
 
 /*
  * Backwards function compares the number of white pixels with the tapeWidth and if it is less than that number it will change course
@@ -82,6 +71,73 @@ bool goBackward() {
 	}
 }
 
+int getCol(int column) {
+	int threshold = 100;
+
+	take_picture();
+	//display_picture(3,0);
+	for(int i = 0; i < testPointsCol; i++) {
+		char brightness = get_pixel((int)((240/testPointsCol) * i),column , 3);
+		if(brightness <= threshold) {
+			// black
+			col[i] = 0;
+		} else {
+			// white
+			col[i] = 1;
+		}
+		
 	}
 	return 0;
 }
+
+
+bool canTurnLeft(){
+	int count = 0;
+	getCol(20);
+	for(int i=0; i<testPointsCol; i++){
+		if(col[i] == 1){
+			count++;
+			
+		}
+	}
+	
+	if(tapeWidth < count){
+		return true;
+	}else{
+		return false;
+	}
+	
+bool canTurnRight(){
+	int count = 0;
+	getCol(220);
+	for(int i=0; i<testPointsCol; i++){
+		if(col[i] == 1){
+			count++;
+			
+		}
+	}
+	
+	if(tapeWidth < count){
+		return true;
+	}else{
+		return false;
+	}
+}
+	
+bool topTape(){
+	int count = 0;
+	getCol(20);
+	for(int i=0; i<testPointsCol; i++){
+		if(col[i] == 1){
+			count++;
+			
+		}
+	}
+	
+	if(tapeWidth < count){
+		return true;
+	}else{
+		return false;
+	}
+}
+} 
