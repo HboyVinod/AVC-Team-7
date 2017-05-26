@@ -217,7 +217,7 @@ int q1() {
  * Checks if the current quadrant is finished. Returns true if it is, and false if it isn't.
  */
 bool finishedQ(int currentQ) {
-
+	q1();
 	if(currentQ == 1 && currentQ == quadrant) {
 		quadrant ++;
 		return false;
