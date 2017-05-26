@@ -65,13 +65,13 @@ int updateSpeeds() {
  * Returns the row array,
  * an array of zeros and ones signifying black and while pixels, used to tell the position of the tape relative to the robot.
  */
-int getRow(int row) {
+int getRow(int targetRow) {
 	int threshold = 100;
 
 	take_picture();
 	//display_picture(3,0);
 	for(int i = 0; i < testPoints; i++) {
-		char brightness = get_pixel(row, (int)((320/testPoints) * i), 3);
+		char brightness = get_pixel(targetRow, (int)((320/testPoints) * i), 3);
 		if(brightness <= threshold) {
 			// black
 			row[i] = 0;
