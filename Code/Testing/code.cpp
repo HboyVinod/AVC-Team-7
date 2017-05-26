@@ -20,10 +20,19 @@ int rightWheel = defaultSpeed;
 
 // The width of the tape
 int tapeWidth = 60;
+
+/*
+// The number of times the robot has had to back up
+int backCount = 0;
+// The number of times the robot has gone forwards
+int forwardCount = 0;*/
+
 // Q2 Constants
-const double pConstant = 0.0027;
+const double pConstant = 0.0025;
 const int testPoints = 320;
 int row[testPoints];
+
+
 
 /*
  * Return the absolute value of whatever number is passed into it.
@@ -209,6 +218,10 @@ int q1() {
  */
 bool finishedQ(int currentQ) {
 
+	if(currentQ == 1 && currentQ == quadrant) {
+		quadrant ++;
+		return false;
+	}
 	if(currentQ == 2) {
 		return false;
 	}
