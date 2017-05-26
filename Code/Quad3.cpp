@@ -2,18 +2,15 @@
 #include <time.h>
 #include "E101.h"
 
+// Number of test points in column
 const int testPointsCol = 240;
+
+// Arrays to hold 0 and 1 black and white values
 int col[testPointsCol];
-const int turnThreshold = 60;
+int topRow[testPoints];
 
-// The current quadrant.
-int quadrant = 3;
-
-
-// The default speed of the wheels.
-const int defaultSpeed = 40;
-const int maxSpeed = 150;
-
+// Value that indiates junction in Q3
+int junctionThreshold = 90;
 
 // The current speed of each wheel.
 int leftWheel = defaultSpeed;
@@ -73,7 +70,6 @@ bool goBackward() {
 
 int getCol(int column) {
 	int threshold = 100;
-
 	take_picture();
 	//display_picture(3,0);
 	for(int i = 0; i < testPointsCol; i++) {
@@ -85,38 +81,33 @@ int getCol(int column) {
 			// white
 			col[i] = 1;
 		}
-		
 	}
 	return 0;
 }
 
 
-bool canTurnLeft(){
+bool leftTape(){
 	int count = 0;
 	getCol(20);
 	for(int i=0; i<testPointsCol; i++){
 		if(col[i] == 1){
 			count++;
-			
 		}
 	}
-	
 	if(tapeWidth < count){
 		return true;
 	}else{
 		return false;
 	}
 	
-bool canTurnRight(){
+bool rightTape(){
 	int count = 0;
 	getCol(220);
 	for(int i=0; i<testPointsCol; i++){
 		if(col[i] == 1){
 			count++;
-			
 		}
 	}
-	
 	if(tapeWidth < count){
 		return true;
 	}else{
@@ -126,18 +117,42 @@ bool canTurnRight(){
 	
 bool topTape(){
 	int count = 0;
-	getCol(20);
+	getRow(20);
 	for(int i=0; i<testPointsCol; i++){
 		if(col[i] == 1){
 			count++;
-			
 		}
 	}
-	
 	if(tapeWidth < count){
 		return true;
 	}else{
 		return false;
 	}
 }
-} 
+
+bool atJunction(){
+	getRow(120);
+	int whiteCount = 0;
+	for(int i = 0; i<testPoints; i++){
+		if(row[i] == 1){count++;}
+	}
+	double proportionWhite = whiteCount/testPoints;
+	
+}
+
+int control (){ //can be iterated
+	
+	if (topTape()){
+		//go forwards
+		//do normal  
+	} else if (leftTape()){
+		//go left
+	} else if (rightTape()){
+		//go right
+	} else {
+		//go backwards
+	}
+	
+
+return 0;}
+
