@@ -21,7 +21,7 @@ int rightWheel = defaultSpeed;
 // The width of the tape
 int tapeWidth = 60;
 // Q2 Constants
-const double pConstant = 0.003;
+const double pConstant = 0.0027;
 const int testPoints = 320;
 int row[testPoints];
 
@@ -111,6 +111,7 @@ int backwards() {
 	rightWheel = -1 * defaultSpeed;
 	leftWheel = -1 * defaultSpeed;
 	updateSpeeds();
+	sleep1(0,500);
 	return 0;
 }
 
@@ -192,6 +193,20 @@ int q2() {
 	return 0;
 }
 
+int q1() {
+	init();//not sure about this lineeee
+	char message[24];
+	char server_address[] = "130.195.6.196";
+	char pls[] = "Please";
+	connect_to_server(server_address, 1024);
+	send_to_server(pls);
+	receive_from_server(message);//could be buggy, test it
+	send_to_server(message);
+}
+
+/*
+ * Checks if the current quadrant is finished. Returns true if it is, and false if it isn't.
+ */
 bool finishedQ(int currentQ) {
 
 	if(currentQ == 2) {
@@ -207,10 +222,22 @@ bool finishedQ(int currentQ) {
  */
 int main() {
 	init();
-	//tapeWidth = getTapeWidth();
 	while(true) {
+		if (quadrant == 1) {
+			if(finishedQ(1)) {
+				quadrant++;
+				printf("Finished Quadrant One!\n");
+			} else {
+				q1();
+			}
+		}
 		if(quadrant == 2) {
-			q2();
+			if(finishedQ(2)) {
+				quadrant++;
+				printf("Finished Quadrant Two!\n");
+			} else {
+				q2();
+			}
 		}
 		sleep1(0,500);
 		/*
