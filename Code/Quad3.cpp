@@ -5,17 +5,12 @@
 // Number of test points in column
 const int testPointsCol = 240;
 
-// Arrays to hold 0 and 1 black and white values
+// Array to hold black and white values for column
 int col[testPointsCol];
-int topRow[testPoints];
-
-// Value that indiates junction in Q3
-int junctionThreshold = 90;
 
 // The current speed of each wheel.
 int leftWheel = defaultSpeed;
 int rightWheel = defaultSpeed;
-
 
 // The width of the tape
 int tapeWidth = 60;
@@ -68,12 +63,15 @@ bool goBackward() {
 	}
 }
 
+
+/*
+ * Takes picture and populates the col array with 1 (white) and 0 (black) for specified column 
+ */
 int getCol(int column) {
 	int threshold = 100;
 	take_picture();
-	//display_picture(3,0);
 	for(int i = 0; i < testPointsCol; i++) {
-		char brightness = get_pixel((int)((240/testPointsCol) * i),column , 3);
+		char brightness = get_pixel((int)((240/testPointsCol) * i), column , 3);
 		if(brightness <= threshold) {
 			// black
 			col[i] = 0;
@@ -86,6 +84,9 @@ int getCol(int column) {
 }
 
 
+/*
+ * Tests if there is white tape on the left (column 20)
+ */
 bool leftTape(){
 	int count = 0;
 	getCol(20);
@@ -99,7 +100,12 @@ bool leftTape(){
 	}else{
 		return false;
 	}
+}
 	
+
+/*
+ * Tests if there is white tape on the right (column 220)
+ */	
 bool rightTape(){
 	int count = 0;
 	getCol(220);
@@ -114,12 +120,16 @@ bool rightTape(){
 		return false;
 	}
 }
+
 	
+/*
+ * Tests if there is white tape on the top (row 20)
+ */	
 bool topTape(){
 	int count = 0;
 	getRow(20);
-	for(int i=0; i<testPointsCol; i++){
-		if(col[i] == 1){
+	for(int i=0; i<testPoints; i++){
+		if(row[i] == 1){
 			count++;
 		}
 	}
@@ -130,29 +140,59 @@ bool topTape(){
 	}
 }
 
+
+/*
+ * Tests if centre row is at a junction (when there is no longer black on left and right)
+ */	
 bool atJunction(){
 	getRow(120);
-	int whiteCount = 0;
-	for(int i = 0; i<testPoints; i++){
-		if(row[i] == 1){count++;}
+	int whiteLeft = 0;
+	int whiteRight = 0;
+	for (int i = 0; i < 20; i++){
+		if(row[i] == 1){
+			whiteLeft++;
+		} 	
 	}
-	double proportionWhite = whiteCount/testPoints;
+	for (int i = (testPoints - 20); i < testPoints; i++){
+		if(row[i] == 1){
+			whiteRight++;
+		} 	
+	}
+	// If there is black on both sides, it is not at a junction
+	// Can change the number, at the moment if less than 16 of the 20 tested on each side are white, it is considered black
+	if (whiteLeft <= 16 && whiteRight <= 16){
+		return false;
+	}else {
+		return true;
+	}
 	
 }
 
-int control (){ //can be iterated
+
+/*
+ * Main control for quadrant 3, determines direction to turn at a junction
+ */	
+int q3 (){ //can be iterated
 	
-	if (topTape()){
-		//go forwards
-		//do normal  
-	} else if (leftTape()){
-		//go left
-	} else if (rightTape()){
-		//go right
+	if (atJunction){
+		if (topTape()){
+			forward();
+		} else if (leftTape()){
+			// Should left wheel go forward slowly, stay still, or go a bit backwards? 
+			// Test to find best values for speeds
+			leftWheel = 5; 
+			rightWheel = 100;
+			updateSpeeds()
+		} else if (rightTape()){
+			leftWheel = 100;
+			rightWheel = 5;
+			updateSpeeds()
+		} else {
+			backwards();
+		}
 	} else {
-		//go backwards
+		q2();
 	}
 	
-
 return 0;}
 
