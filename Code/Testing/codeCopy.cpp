@@ -227,6 +227,7 @@ bool rightTape(){
 			count++;
 		}
 	}
+	count += 15;
 	if(testing){printf("%d\n", count);}
 	if(tapeWidth < count){
 		if (testing){printf("rightTape true\n");}
