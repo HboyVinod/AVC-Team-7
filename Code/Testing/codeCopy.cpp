@@ -166,7 +166,9 @@ bool goBackward() {
 			count++;
 		}
 	} if(count < (0.5*tapeWidth)) {
+		if (testing){print1("goBackward true");}
 		return true;
+		
 	} else {
 		return false;
 	}
@@ -213,9 +215,10 @@ bool leftTape(){
 	
 
 /*
- * Tests if there is white tape on the right (column 220)
+ * Tests if there is white tape on the right (column 300)
  */	
 bool rightTape(){
+	if (testing){print1("rightTape called");}
 	int count = 0;
 	getCol(300);
 	for(int i=0; i<testPointsCol; i++){
@@ -224,8 +227,10 @@ bool rightTape(){
 		}
 	}
 	if(tapeWidth < count){
+		if (testing){print1("rightTape true");}
 		return true;
 	}else{
+		if (testing){print1("rightTape false");}
 		return false;
 	}
 }
