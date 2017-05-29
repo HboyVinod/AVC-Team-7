@@ -223,11 +223,10 @@ bool rightTape(){
 	getCol(300);
 	for(int i=0; i<testPointsCol; i++){
 		if(col[i] == 1){
-			
 			count++;
 		}
 	}
-	count += 15;
+	//count += 15;
 	if(testing){printf("%d\n", count);}
 	if(tapeWidth < count){
 		if (testing){printf("rightTape true\n");}
@@ -344,12 +343,13 @@ int q3 (){ //can be iterated
 			leftWheel = 5; 
 			rightWheel = 60;
 			updateSpeeds();
-		} else if (rightTape()){
+		//} else if (rightTape()){
+		} else {
 			leftWheel = 60;
 			rightWheel = 5;
 			updateSpeeds();
-		} else {
-			backwards();
+		//} else {
+			//backwards();
 		}
 	} else {
 		q2();
