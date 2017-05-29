@@ -335,7 +335,7 @@ int q3 (){ //can be iterated
 			// Test to find best values for speeds
 			leftWheel = 5; 
 			rightWheel = 100;
-			updateSpeeds()
+			updateSpeeds();
 		} else if (rightTape()){
 			leftWheel = 100;
 			rightWheel = 5;
