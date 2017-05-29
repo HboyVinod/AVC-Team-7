@@ -365,7 +365,9 @@ bool finishedQ(int currentQ) {
 		return false;
 		
 	}
-
+	if(currentQ == 3) {
+		return false;
+	}
 	return true;
 }
 
