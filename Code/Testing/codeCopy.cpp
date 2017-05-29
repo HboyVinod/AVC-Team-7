@@ -217,7 +217,7 @@ bool leftTape(){
  */	
 bool rightTape(){
 	int count = 0;
-	getCol(220);
+	getCol(300);
 	for(int i=0; i<testPointsCol; i++){
 		if(col[i] == 1){
 			count++;
