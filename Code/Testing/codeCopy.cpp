@@ -218,19 +218,21 @@ bool leftTape(){
  * Tests if there is white tape on the right (column 300)
  */	
 bool rightTape(){
-	if (testing){printf("rightTape called");}
+
 	int count = 0;
 	getCol(300);
 	for(int i=0; i<testPointsCol; i++){
 		if(col[i] == 1){
+			
 			count++;
 		}
 	}
+	if(testing){printf("%d\n", count);}
 	if(tapeWidth < count){
-		if (testing){printf("rightTape true");}
+		if (testing){printf("rightTape true\n");}
 		return true;
 	}else{
-		if (testing){printf("rightTape false");}
+		if (testing){printf("rightTape false\n");}
 		return false;
 	}
 }
