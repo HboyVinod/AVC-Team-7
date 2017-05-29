@@ -278,35 +278,6 @@ bool atJunction(){
 }
 
 
-/*
- * Main control for quadrant 3, determines direction to turn at a junction
- */	
-int q3 (){ //can be iterated
-	
-	if (atJunction){
-		if (topTape()){
-			forward();
-		} else if (leftTape()){
-			// Should left wheel go forward slowly, stay still, or go a bit backwards? 
-			// Test to find best values for speeds
-			leftWheel = 5; 
-			rightWheel = 100;
-			updateSpeeds()
-		} else if (rightTape()){
-			leftWheel = 100;
-			rightWheel = 5;
-			updateSpeeds()
-		} else {
-			backwards();
-		}
-	} else {
-		q2();
-	}
-	
-	return 0;
-}
-
-
 
 /*
  * The code for quadrant 2,
@@ -349,6 +320,37 @@ int q1() {
 	send_to_server(pls);	receive_from_server(message);//could be buggy, test it
 	send_to_server(message);
 }
+
+
+/*
+ * Main control for quadrant 3, determines direction to turn at a junction
+ */	
+int q3 (){ //can be iterated
+	
+	if (atJunction){
+		if (topTape()){
+			forward();
+		} else if (leftTape()){
+			// Should left wheel go forward slowly, stay still, or go a bit backwards? 
+			// Test to find best values for speeds
+			leftWheel = 5; 
+			rightWheel = 100;
+			updateSpeeds()
+		} else if (rightTape()){
+			leftWheel = 100;
+			rightWheel = 5;
+			updateSpeeds();
+		} else {
+			backwards();
+		}
+	} else {
+		q2();
+	}
+	
+	return 0;
+}
+
+
 
 /*
  * Checks if the current quadrant is finished. Returns true if it is, and false if it isn't.
