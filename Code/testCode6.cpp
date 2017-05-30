@@ -397,7 +397,7 @@ bool finishedQ(int currentQ) {
                 count++;
             }
         }
-        if(count > testPoints && leftTape() && rightTape()) {
+        if(count > (testPoints-10) && leftTape() && rightTape()) {
             return true;
         }
 
