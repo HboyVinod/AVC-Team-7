@@ -352,6 +352,22 @@ int q3 (){ //can be iterated
 		q2();
 	}
 	
+	if (topTape()){
+		q2();
+	} else if (leftTape()){
+		// Should left wheel go forward slowly, stay still, or go a bit backwards? 
+		// Test to find best values for speeds
+		leftWheel = 5; 
+		rightWheel = 60;
+		updateSpeeds();
+	} else if (rightTape()){
+		leftWheel = 60;
+		rightWheel = 5;
+		updateSpeeds();
+	} else {
+		q2();
+	}
+	
 	return 0;
 }
 
