@@ -168,7 +168,7 @@ bool goBackward() {
 	} if(count < (0.5*tapeWidth)) {
 		if (testing){printf("goBackward true");}
 		return true;
-		
+
 	} else {
 		return false;
 	}
@@ -176,7 +176,7 @@ bool goBackward() {
 
 
 /*
- * Takes picture and populates the col array with 1 (white) and 0 (black) for specified column 
+ * Takes picture and populates the col array with 1 (white) and 0 (black) for specified column
  */
 int getCol(int column) {
 	int threshold = 100;
@@ -212,11 +212,11 @@ bool leftTape(){
 		return false;
 	}
 }
-	
+
 
 /*
  * Tests if there is white tape on the right (column 300)
- */	
+ */
 bool rightTape(){
 
 	int count = 0;
@@ -237,10 +237,12 @@ bool rightTape(){
 	}
 }
 
-	
+
 /*
  * Tests if there is white tape on the top (row 20)
- */	
+ */
+bool topTape() {
+	int count = 0;
 	getRow(20);
 	for(int i=0; i<testPoints; i++){
 		if(row[i] == 1){
@@ -257,7 +259,7 @@ bool rightTape(){
 
 /*
  * Tests if centre row is at a junction (when there is no longer black on left and right)
- */	
+ */
 bool atJunction(){
 	getRow(120);
 	int whiteLeft = 0;
@@ -265,12 +267,12 @@ bool atJunction(){
 	for (int i = 0; i < 20; i++){
 		if(row[i] == 1){
 			whiteLeft++;
-		} 	
+		}
 	}
 	for (int i = (testPoints - 20); i < testPoints; i++){
 		if(row[i] == 1){
 			whiteRight++;
-		} 	
+		}
 	}
 	// If there is black on both sides, it is not at a junction
 	// Can change the number, at the moment if less than 16 of the 20 tested on each side are white, it is considered black
@@ -279,7 +281,7 @@ bool atJunction(){
 	}else {
 		return true;
 	}
-	
+
 }
 
 
@@ -330,13 +332,13 @@ int q1() {
 /*
  * Main control for quadrant 3, determines direction to turn at a junction
  * it ignores the check for right tape, as long as q2 code can handle sharp corners it should be fine?
- */	
+ */
 int q3 (){
 	if (atJunction){
 		if (topTape()){
 			forward();
 		} else if (leftTape()){
-			leftWheel = 5; 
+			leftWheel = 5;
 			rightWheel = 60;
 			updateSpeeds();
 		} else {
@@ -360,7 +362,7 @@ bool finishedQ(int currentQ) {
 	}
 	if(currentQ == 2) {
 		return false;
-		
+
 	}
 	if(currentQ == 3) {
 		return false;
