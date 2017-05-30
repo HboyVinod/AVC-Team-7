@@ -127,6 +127,14 @@ int backwards() {
 	return 0;
 }
 
+int backwards1() {
+    rightWheel = -1 * (defaultSpeed + 20);
+	leftWheel = -1 * defaultSpeed;
+    updateSpeeds();
+	sleep1(0,500);
+	return 0;
+}
+
 /*
  * Turns the robot based on the error value given.
  * scales the error so that it can be added or subtracted from the speed and turn the robot correctly.
@@ -332,22 +340,25 @@ int q1() {
  */
 int q3 (){ //can be iterated
 
-	if (topTape()){
-		q2();
-	} else if (leftTape()){
-		// Should left wheel go forward slowly, stay still, or go a bit backwards?
-		// Test to find best values for speeds
-		leftWheel = 5;
-		rightWheel = 60;
-		updateSpeeds();
-	} else if (rightTape()){
-		leftWheel = 60;
-		rightWheel = 5;
-		updateSpeeds();
+	if (atJunction){
+		if (topTape()){
+			forward();
+		} else if (leftTape()){
+			// Should left wheel go forward slowly, stay still, or go a bit backwards?
+			// Test to find best values for speeds
+			leftWheel = 5;
+			rightWheel = 60;
+			updateSpeeds();
+		} else if (rightTape()){
+			leftWheel = 60;
+			rightWheel = 5;
+			updateSpeeds();
+		} else {
+			backwards1();
+		}
 	} else {
 		q2();
 	}
-	return 0;
 }
 
 /*

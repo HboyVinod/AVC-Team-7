@@ -332,22 +332,25 @@ int q1() {
  */
 int q3 (){ //can be iterated
 
-	if (topTape()){
-		q2();
-	} else if (leftTape()){
-		// Should left wheel go forward slowly, stay still, or go a bit backwards?
-		// Test to find best values for speeds
-		leftWheel = 5;
-		rightWheel = 60;
-		updateSpeeds();
-	} else if (rightTape()){
-		leftWheel = 60;
-		rightWheel = 5;
-		updateSpeeds();
+	if (atJunction){
+		if (topTape()){
+			forward();
+		} else if (leftTape()){
+			// Should left wheel go forward slowly, stay still, or go a bit backwards?
+			// Test to find best values for speeds
+			leftWheel = 5;
+			rightWheel = 60;
+			updateSpeeds();
+		} else if (rightTape()){
+			leftWheel = 60;
+			rightWheel = 5;
+			updateSpeeds();
+		} else {
+			backwards();
+		}
 	} else {
 		q2();
 	}
-	return 0;
 }
 
 /*
@@ -399,30 +402,7 @@ int main() {
 	init();
 	q1();
 	while(true) {
-		if (quadrant == 1) {
-			if(finishedQ(1)) {
-				quadrant++;
-				printf("Finished Quadrant One!\n");
-			} else {
-				q1();
-			}
-		}
-		if(quadrant == 2) {
-			if(finishedQ(2)) {
-				quadrant++;
-				printf("Finished Quadrant Two!\n");
-			} else {
-				q2();
-			}
-		}
-		if(quadrant == 3) {
-			if(finishedQ(3)){
-				quadrant++;
-				printf("Finished Quadrant Three!\n");
-			} else {
-				q3();
-			}
-		}
+		rightTape();
 		sleep1(0,500);
 	}
 	return 0;
