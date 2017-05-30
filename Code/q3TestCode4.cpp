@@ -250,6 +250,7 @@ bool rightTape(){
  * Tests if there is white tape on the top (row 20)
  */
 bool topTape() {
+	int count = 0;
 	getRow(20);
 	for(int i=0; i<testPoints; i++){
 		if(row[i] == 1){
