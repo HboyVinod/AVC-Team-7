@@ -131,7 +131,7 @@ int backwards1() {
     rightWheel = -1 * (defaultSpeed + 20);
 	leftWheel = -1 * defaultSpeed;
     updateSpeeds();
-	sleep1(0,10000);
+	sleep1(0,5000);
 	return 0;
 }
 
@@ -352,8 +352,8 @@ int q3 (){ //can be iterated
 			rightWheel = 60;
 			updateSpeeds();
 		} else if (rightTape()){
-			leftWheel = 55;
-			rightWheel = 0;
+			leftWheel = 60;
+			rightWheel = 5;
 			updateSpeeds();
 		} else {
 			backwards1();
