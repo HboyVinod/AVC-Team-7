@@ -344,7 +344,7 @@ int q3 (){ //can be iterated
 
 	if (atJunction){
 		if (topTape()){
-			q2();
+			forward();
 		} else if (leftTape()){
 			// Should left wheel go forward slowly, stay still, or go a bit backwards?
 			// Test to find best values for speeds
