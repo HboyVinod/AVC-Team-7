@@ -8,7 +8,7 @@
 const int testing = true;
 
 // The current quadrant.
-int quadrant = 3;
+int quadrant = 2;
 
 // The default speed of the wheels.
 const int defaultSpeed = 40;
@@ -389,14 +389,19 @@ int q3 (){ //can be iterated
  * Checks if the current quadrant is finished. Returns true if it is, and false if it isn't.
  */
 bool finishedQ(int currentQ) {
-
-	if(currentQ == 1 && currentQ == quadrant) {
-		quadrant ++;
-		return false;
-	}
 	if(currentQ == 2) {
-		return false;
+        getRow(160);
+        int count = 0
+        for(int i = 0; i < testPoints) {
+            if(row[i] == 1) {
+                count++;
+            }
+        }
+        if(count > (testPoints-10)) {
+            return true;
+        }
 
+		return false;
 	}
 	if(currentQ == 3) {
 		return false;
@@ -412,7 +417,22 @@ int main() {
 	init();
 	q1();
 	while(true) {
-		q3();
+        if(quadrant == 2) {
+			if(finishedQ(2)) {
+				quadrant++;
+				printf("Finished Quadrant Two!\n");
+			} else {
+				q2();
+			}
+		}
+		if(quadrant == 3) {
+			if(finishedQ(3)){
+				quadrant++;
+				printf("Finished Quadrant Three!\n");
+			} else {
+				q3();
+			}
+		}
 		sleep1(0,500);
 	}
 	return 0;
