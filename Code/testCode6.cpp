@@ -391,7 +391,7 @@ int q3 (){ //can be iterated
 bool finishedQ(int currentQ) {
 	if(currentQ == 2) {
         getRow(160);
-        int count = 0
+        int count = 0;
         for(int i = 0; i < testPoints) {
             if(row[i] == 1) {
                 count++;
