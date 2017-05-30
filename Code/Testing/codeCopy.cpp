@@ -355,6 +355,26 @@ int q3 (){ //can be iterated
 	return 0;
 }
 
+/*
+ * TRY THIS IF RIGHT TURN DOESN'T WORK
+ * it ignores the check for right tape, as long as q2 code can handle sharp corners it should be fine?
+ */	
+//int q3 (){
+	//if (atJunction){
+		//if (topTape()){
+			//forward();
+		//} else if (leftTape()){
+			//leftWheel = 5; 
+			//rightWheel = 60;
+			//updateSpeeds();
+		//} else {
+			//q2();
+		//}
+	//} else {
+		//q2();
+	//}
+	//return 0;
+//}
 
 
 /*
