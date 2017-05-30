@@ -130,6 +130,7 @@ int backwards() {
 int backwards1() {
     rightWheel = -1 * (defaultSpeed + 40);
 	leftWheel = -1 * defaultSpeed;
+    printf("SLEEPING\n");
     updateSpeeds();
 	sleep1(0,5000);
 	return 0;
