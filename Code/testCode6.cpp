@@ -131,7 +131,7 @@ int backwards1() {
     rightWheel = -1 * (defaultSpeed + 20);
 	leftWheel = -1 * defaultSpeed;
     updateSpeeds();
-	sleep1(0,5000);
+	sleep1(0,7500);
 	return 0;
 }
 
@@ -344,7 +344,7 @@ int q3 (){ //can be iterated
 
 	if (atJunction){
 		if (topTape()){
-			forward();
+			q2();
 		} else if (leftTape()){
 			// Should left wheel go forward slowly, stay still, or go a bit backwards?
 			// Test to find best values for speeds
