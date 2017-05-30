@@ -353,7 +353,7 @@ int q3 (){ //can be iterated
 			updateSpeeds();
 		} else if (rightTape()){
 			leftWheel = 100;
-			rightWheel = -100;
+			rightWheel = -50;
 			updateSpeeds();
 		} else {
 			backwards1();
