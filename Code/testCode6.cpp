@@ -131,7 +131,7 @@ int backwards1() {
     rightWheel = -1 * (defaultSpeed + 20);
 	leftWheel = -1 * defaultSpeed;
     updateSpeeds();
-	sleep1(0,7500);
+	sleep1(0,10000);
 	return 0;
 }
 
