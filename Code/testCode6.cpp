@@ -110,8 +110,8 @@ int stop() {
  * Reset the motor speeds to be moving forwards.
  */
 int forward() {
-	rightWheel = 0.5*defaultSpeed;
-	leftWheel = 0.5*defaultSpeed;
+	rightWheel = defaultSpeed;
+	leftWheel = defaultSpeed;
 	updateSpeeds();
 	return 0;
 }
